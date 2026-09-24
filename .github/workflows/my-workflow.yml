@@ -1,5 +1,5 @@
 name: My first workflow
-on: workflow_dispatch
+on: push
 jobs:
   my-first-job:
     runs-on: ubuntu-latest
@@ -14,3 +14,10 @@ jobs:
         run: ls -a
       - name: Run Nodejs file
         run: node app.js
+      - name: CPU architecture
+        run: lscpu
+      - name: Ram
+        run: free -h
+      - name: Sytem Architecture
+        run: uname -m
+
