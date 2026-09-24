@@ -12,12 +12,23 @@ jobs:
         run: echo 'console.log("he,lo World!");' > app.js
       - name: List all files
         run: ls -a
-      - name: Run Nodejs file
-        run: node app.js
+
+  my-second-job:
+    runs-on: ubuntu-latest
+    steps:
       - name: CPU architecture
         run: lscpu
-      - name: Ram
-        run: free -h
       - name: Sytem Architecture
         run: uname -m
-
+      - name: Ram
+        run: free -h
+      - name: SSD Info
+        run: df -h
+      - name: Hardware details about your storage drive
+        run: sudo lshw -class disk
+      - name: Run Multiline Script
+        run: |
+          echo "Starting Script"
+          uname -r
+          nproc
+          lsblk
